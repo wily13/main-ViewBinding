@@ -1,5 +1,6 @@
 package com.example.mainviewbinding
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mainviewbinding.databinding.ActivityMainBinding
@@ -13,6 +14,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.textView.text = "This is view binding"
+        binding.textView.text = "This is main activity with view binding"
+        binding.button.setOnClickListener {
+            startActivity(Intent(this, SecondActivity::class.java))
+        }
     }
 }

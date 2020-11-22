@@ -5,14 +5,14 @@ import android.os.Bundle
 import com.example.mainviewbinding.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private var binding: ActivityMainBinding? = null
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding?.root)
+        setContentView(binding.root)
 
-        binding?.textView?.text = "This is view binding"
+        binding.textView.text = "This is view binding"
     }
 }
